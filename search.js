@@ -1,5 +1,7 @@
-var input = document.getElementById('search');
+var input = document.getElementById('searchInput');
 var form =  document.getElementById('searchForm');
+var audio = document.querySelector('audio');
+var links = document.querySelectorAll('a');
 
 var providers = {
 "": "https://www.google.com/search?&q=",
@@ -22,3 +24,5 @@ function search() {
 }
 
 document.addEventListener('submit', search);
+
+links.forEach(link => link.addEventListener('hover', audio.play)); // TODO find out why this isnt working
